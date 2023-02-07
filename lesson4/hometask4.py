@@ -12,6 +12,7 @@ print('Result list after deleting numbers which less than 21 and more than 74: {
 
 
 
+# 2
 # Є два довільних числа які відповідають за мінімальну і максимальну ціну.
 # Є Dict з назвами магазинів і цінами: { "cito": 47.999, "BB_studio" 42.999, "momo": 49.999, "main-service": 37.245,
 # "buy.now": 38.324, "x-store": 37.166, "the_partner": 38.988, "store": 37.720, "roze-tka": 38.003}.
