@@ -21,7 +21,7 @@ def data_checking(data: str):
     return check_result
 
 def season_determination(date: str):
-    '''Receives a date in format "[day].[month]" and determines a season this date relates.'''
+    '''Receives a date in format "[day].[month]" and determines a season which this date relates.'''
     month_str = date.split('.')[1]
     month_int = int(month_str)
     if month_int in (3, 4, 5):
