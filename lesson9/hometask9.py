@@ -2,6 +2,7 @@
 # наслідувані від "Транспортний засіб". Наповніть класи атрибутами на свій розсуд.
 # Створіть обʼєкти класів "Автомобіль", "Літак", "Корабель".
 class Vehicle:
+    model = None
     owner = 'Ігор'
     owner_age = 43
     owner_rating = 9.87
@@ -9,6 +10,12 @@ class Vehicle:
 
 
 class Car(Vehicle):
+    brand = None
+    state = None
+    color = None
+    seats = None
+    mileage = None
+
     def __init__(self, status=None):
         print(f'\nДодайте інформацію про машину власника {self.owner} (вік - {self.owner_age}, рейтинг - '
               f'{self.owner_rating}/10. Введіть:')
@@ -25,6 +32,10 @@ class Car(Vehicle):
 
 class Ship(Vehicle):
     ship_class = 'Passenger'
+    load_capacity = None
+    capacity = None
+    speed = None
+    crew = None
 
     def __init__(self, status=None):
         print(f'\nДодайте інформацію про корабель власника {self.owner} (вік - {self.owner_age}, рейтинг - '
@@ -41,6 +52,8 @@ class Ship(Vehicle):
 
 class Plane(Vehicle):
     plane_class = 'Passenger'
+    transportation_type = None
+    capacity = None
 
     def __init__(self, status=None):
         print(f'\nДодайте інформацію про літак власника {self.owner} (вік - {self.owner_age}, рейтинг - '
@@ -56,7 +69,3 @@ class Plane(Vehicle):
 car1 = Car('продаю')
 ship1 = Ship()
 plane1 = Plane('продам')
-
-print(car1.sale_status)
-print(ship1.sale_status)
-print(plane1.sale_status)

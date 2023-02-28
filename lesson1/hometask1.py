@@ -3,14 +3,23 @@
 # Виведіть на екран результат математичної взаємодії (+, -, *, / и тд.) для цих чисел.
 print('Task 1')
 first = 10
+print(f'first = {first}')
 second = 30
-print('first + second =', first + second)
-print('first - second =', first - second)
-print('first * second =', first * second)
-print('first / second =',  first / second)
-print('first ** second =', first ** second)
-print('first // second =', first // second)
-print('first % second =', first % second)
+print(f'second = {second}')
+numbers_summ = first + second
+print('first + second =', numbers_summ)
+numbers_diff = first - second
+print('first - second =', numbers_diff)
+numbers_prod = first * second
+print('first * second =', numbers_prod)
+numbers_float_div = first / second
+print('first / second =', numbers_float_div)
+numbers_exp = first ** second
+print('first ** second =', numbers_exp)
+numbers_int_div = first // second
+print('first // second =', numbers_int_div)
+numbers_div_remainder = first % second
+print('first % second =', numbers_div_remainder)
 
 # 2
 # Задача: Створіть змінну и по черзі запишіть в неї результат порівняння (<, > , ==, !=) чисел з завдання 1.

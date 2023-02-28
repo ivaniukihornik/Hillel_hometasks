@@ -3,9 +3,9 @@
 import time
 def function_time(function):
     '''Remembers the time before the function starting and finishing and calculates a duration of function'''
-    def _wrapper(*args):
+    def _wrapper(*args, **kwargs):
         start_time = time.time()
-        res = function(*args)
+        res = function(*args, **kwargs)
         duration = time.time() - start_time
         print(f'Duration of function "{function.__name__}": {duration} seconds')
         return res
