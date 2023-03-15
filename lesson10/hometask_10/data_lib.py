@@ -15,9 +15,9 @@ import random as random_module  # import instruction was moved to the top of the
 # Union method was deleted because it is unused
 
 
-def get_random_number() -> float:
-    """Generate and return float number 'N' in range -10**10 < N < 10**10"""
-    number: float = random_module.random() * random_module.randint(-10**10, 10**10)
+def get_random_number() -> int:
+    """Generate and return int number 'N' in range -10**10 < N < 10**10"""
+    number: int = int(random_module.random() * random_module.randint(-10**10, 10**10))
     return number
 
 
