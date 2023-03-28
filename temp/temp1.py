@@ -55,53 +55,71 @@
 
 
 
-def type_checker(*types):
+# def type_checker(*types):
+#
+#     def type_checker_wrapper(func):
+#
+#         def _wrapper(*args, **kwargs):
+#             print('Inside `type_checker`')
+#             for arg in args:
+#                 if not isinstance(arg, types):  # isinstance(arg, (int, float))
+#                     raise TypeError
+#             for kwarg in kwargs.values():
+#                 if not isinstance(kwarg, types):
+#                     raise TypeError
+#             res = func(*args, **kwargs)
+#             return res
+#
+#         return _wrapper
+#
+#     return type_checker_wrapper
+#
+#
+# def function_wrapper(func):
+#
+#     def _wrapper(*args, **kwargs):
+#
+#         print('Before function')
+#         res = func(*args, **kwargs)
+#         print('After function')
+#
+#         return res
+#
+#     return _wrapper
+#
+#
+# @type_checker(int, float)   # some_function = type_checker(int, float)(some_function)
+# def some_function(*args, **kwargs):
+#     print('I\'m a function `some_function`')
+#     return 10
+#
+#
+# # some_function(1, 1.3)
+#
+#
+# @function_wrapper
+# @type_checker(str)  # some_function = function_wrapper(type_checker(str)(some_function))
+# def some_function2(*args, **kwargs):
+#     print('I\'m a function `some_function`')
+#     return 10
+#
+#
+# some_function2('2')
 
-    def type_checker_wrapper(func):
 
-        def _wrapper(*args, **kwargs):
-            print('Inside `type_checker`')
-            for arg in args:
-                if not isinstance(arg, types):  # isinstance(arg, (int, float))
-                    raise TypeError
-            for kwarg in kwargs.values():
-                if not isinstance(kwarg, types):
-                    raise TypeError
-            res = func(*args, **kwargs)
-            return res
-
-        return _wrapper
-
-    return type_checker_wrapper
+from collections import defaultdict
 
 
-def function_wrapper(func):
+li = ['a', 'b', 'c']
+B = defaultdict(list)
 
-    def _wrapper(*args, **kwargs):
-
-        print('Before function')
-        res = func(*args, **kwargs)
-        print('After function')
-
-        return res
-
-    return _wrapper
+A = ['a', 'a', 'b', 'a', 'b']
 
 
-@type_checker(int, float)   # some_function = type_checker(int, float)(some_function)
-def some_function(*args, **kwargs):
-    print('I\'m a function `some_function`')
-    return 10
+for k, v in enumerate(A):
+    B[v].append(k+1)
 
 
-# some_function(1, 1.3)
-
-
-@function_wrapper
-@type_checker(str)  # some_function = function_wrapper(type_checker(str)(some_function))
-def some_function2(*args, **kwargs):
-    print('I\'m a function `some_function`')
-    return 10
-
-
-some_function2('2')
+m = 2
+for i in range(m):
+    print(' '.join(str(index) for index in (B.get('a', [-1]))))
