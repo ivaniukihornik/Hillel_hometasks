@@ -107,19 +107,117 @@
 # some_function2('2')
 
 
-from collections import defaultdict
+# import math
+#
+#
+# class Points(object):
+#     def __init__(self, x, y, z):
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#     def __sub__(self, no):
+#         x = self.x - no.x
+#         y = self.y - no.y
+#         z = self.z - no.z
+#         return Points(x, y, z)
+#
+#     def dot(self, no):
+#         x = self.x * no.x
+#         y = self.y * no.y
+#         z = self.z * no.z
+#         return x + y + z
+#
+#     def cross(self, no):
+#         x = self.y * no.z - self.z * no.y
+#         y = self.z * no.x - self.x * no.z
+#         z = self.x * no.y - self.y * no.x
+#         return Points(x, y, z)
+#
+#     def absolute(self):
+#         return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)
+#
+#
+# if __name__ == '__main__':
+#     points = list()
+#     for i in range(4):
+#         a = list(map(float, input().split()))
+#         points.append(a)
+#
+#     P_a = [0, 4, 5]
+#     P_b = [1, 7, 6]
+#     P_c = [0, 5, 9]
+#     P_d = [1, 7, 2]
+#
+#     a, b, c, d = Points(*P_a), Points(*P_b), Points(*P_c), Points(*P_d)
+#     x = (b - a).cross(c - b)
+#     y = (c - b).cross(d - c)
+#     angle = math.acos(x.dot(y) / (x.absolute() * y.absolute()))
+#
+#     print("%.2f" % math.degrees(angle))
 
 
-li = ['a', 'b', 'c']
-B = defaultdict(list)
+# import operator
+#
+#
+# def person_lister(f):
+#     def inner(people):
+#         people_new = []
+#         for body in people:
+#             body_new = []
+#             for index, data in enumerate(body):
+#                 if index == 2:
+#                     body_new.append(int(data))
+#                 else:
+#                     body_new.append(data)
+#             people_new.append(body_new)
+#
+#         people_new.sort(key=operator.itemgetter(2))
+#         print('people new', *people_new, sep='\n')
+#         res = []
+#         for body in people_new:
+#             res.append(f(body))
+#         return res
+#
+#     return inner
+#
+#
+# @person_lister
+# def name_format(person):
+#     return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+#
+#
+# if __name__ == '__main__':
+#     people = [input().split() for i in range(int(input()))]
+#     print(*name_format(people), sep='\n')
 
-A = ['a', 'a', 'b', 'a', 'b']
+
+# import operator
+#
+#
+# def person_lister(f):
+#     def inner(people):
+#         # complete the function
+#         data = sorted(people, key=lambda person: int(person[2]))
+#         sorted_people = []
+#         for person in data:
+#             sorted_people.append(f(person))
+#         return sorted_people
+#
+#     return inner
+#
+#
+# @person_lister
+# def name_format(person):
+#     return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[
+#         1]
+#
+#
+# if __name__ == '__main__':
+#     people = [input().split() for i in range(int(input()))]
+#     print(*name_format(people), sep='\n')
 
 
-for k, v in enumerate(A):
-    B[v].append(k+1)
+a = {1: 2}
 
-
-m = 2
-for i in range(m):
-    print(' '.join(str(index) for index in (B.get('a', [-1]))))
+print(a)
