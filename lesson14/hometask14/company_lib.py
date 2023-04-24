@@ -41,6 +41,6 @@ class Iphone(Company, ABC):
         # при наступній передачі
         return income
 
-    def update_units_sold(self, amount) -> None:
+    def update_units_sold(self, amount: int) -> None:
         self.units_sold += amount
         self.total_units_sold[self.model] += amount
