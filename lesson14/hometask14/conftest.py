@@ -2,8 +2,8 @@ from pytest import fixture
 import company_lib
 
 
-@fixture()
-def company(scope='class'):
+@fixture(scope='class')
+def company():
     apple_inc = company_lib.Company()
     yield apple_inc
 
