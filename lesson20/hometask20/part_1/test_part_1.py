@@ -23,5 +23,5 @@ class TestsClass:
         pass
 
     @mark.from_class
-    def test_5(self):
+    def test_5_part_1(self):
         pass

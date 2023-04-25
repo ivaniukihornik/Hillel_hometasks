@@ -3,6 +3,6 @@ from pytest import fixture
 
 @fixture(autouse=True, scope='class')
 def fixture_for_part_1():
-    print('\nTests started')
+    print('\nTESTS STARTED')
     yield
-    print('\nTests finished')
+    print('\nTESTS FINISHED')

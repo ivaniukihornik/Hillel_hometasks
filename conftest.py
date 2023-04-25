@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.fixture(autouse=False)
+@pytest.fixture(autouse=True)
 def project_fixture():
     print('Test started')
     yield
