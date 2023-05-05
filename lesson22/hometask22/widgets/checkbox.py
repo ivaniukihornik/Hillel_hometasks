@@ -14,13 +14,16 @@ class Checkbox:
         except NoSuchElementException:
             return False
 
+    def expand_tree(self, tree_button_locator: str) -> None:
+        self.driver.find_element(By.XPATH, tree_button_locator).click()
+
     def mark_checkboxes(self, tree_state_locator: str, tree_button_locator: str, checkbox_locator: str, names: list)\
             -> None:
         for name in names:
             elements = name.split('-')
             for element in elements:
                 if self.__is_collapsed(tree_state_locator, element):
-                    self.driver.find_element(By.XPATH, tree_button_locator.format(element.lower(), '')).click()
+                    self.expand_tree(tree_button_locator.format(element.lower(), ''))
             checkbox = self.driver.find_element(By.XPATH, checkbox_locator.format(elements[-1].lower()))
             checkbox.click()
 
@@ -29,6 +32,6 @@ class Checkbox:
             is_marked_attr = self.driver.find_element(By.XPATH, locator.format(name.lower())).get_attribute('class')
             is_marked = is_marked_attr.split('-')[-1]
             result = True if is_marked == 'check' else False
-            if result is False:
+            if not result:
                 return False
         return True
