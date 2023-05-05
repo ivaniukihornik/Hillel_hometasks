@@ -216,8 +216,32 @@
 # if __name__ == '__main__':
 #     people = [input().split() for i in range(int(input()))]
 #     print(*name_format(people), sep='\n')
+import pytest
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webdriver import WebDriver
+
+class Button:
+    def __init__(self, driver):
+        self.driver: WebDriver = driver
+        self.URL = 'https://demoqa.com/radio-button'
+        self.button_locator = 'label[for=\'{}Radio\']'
+        self.button_status_locator = 'input#{}Radio'
+        self.buttons_locator = 'label[for*=\'Radio\']'
+
+    def open_page(self):
+        self.driver.get(self.URL)
+
+    def get_buttons_info(self):
+        buttons = []
+        for el in self.driver.find_elements(By.CSS_SELECTOR, self.buttons_locator):
+            buttons.append(el.text)
+        return buttons
 
 
-a = {1: 2}
-
-print(a)
+@pytest.mark.usefixtures('chrome')
+class Test:
+    def test(self):
+        abc = Button(self.driver)
+        abc.open_page()
+        result = abc.get_buttons_info()
+        print(result)
