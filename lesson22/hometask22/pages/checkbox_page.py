@@ -1,5 +1,5 @@
 from selenium.webdriver.remote.webdriver import WebDriver
-from lesson22.hometask22.widgets.widgets import Checkbox
+from lesson22.hometask22.widgets.checkbox import Checkbox
 
 
 class CheckboxPage:
