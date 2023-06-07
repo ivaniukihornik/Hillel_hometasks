@@ -245,12 +245,12 @@
 #         abc.open_page()
 #         result = abc.get_buttons_info()
 #         print(result)
-import numpy
 
 
-a = tuple(map(int, '3 3 3'.split()))
-print(a)
-zeros = numpy.zeros(a)
-ones = numpy.ones(a)
-print(zeros)
-print(ones)
+name = 'John'
+age = 24
+string = f'My name is {name}. I am {age}'
+print(string)
+
+a = 'bbabb'
+print(a*2)
